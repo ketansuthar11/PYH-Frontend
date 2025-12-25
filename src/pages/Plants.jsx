@@ -27,7 +27,7 @@ function Plants() {
                 headers.Authorization = `Bearer ${token}`;
             }
 
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/plants`, {
+            const response = await fetch(`https://prithvi-yadavb.vercel.app/plants`, {
                 method: "GET",
                 headers
             });

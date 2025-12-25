@@ -13,7 +13,7 @@ function Cart(props) {
   // Fetch cart data
   const getCartData = async () => {
     try {
-      const url = "http://localhost:5000/cart";
+      const url = "https://prithvi-yadavb.vercel.app/cart";
       const response = await fetch(url, {
         method: 'GET',
         headers: {
@@ -44,7 +44,7 @@ function Cart(props) {
   // Update quantity in backend
   const updateItemStock = async (plantId, quantity) => {
     try {
-      const url = `http://localhost:5000/cart`;
+      const url = `https://prithvi-yadavb.vercel.app/cart`;
       const response = await fetch(url, {
         method: 'PUT',
         headers: {

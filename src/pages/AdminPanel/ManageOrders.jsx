@@ -10,7 +10,7 @@ function ManageOrders() {
 
   const getOrders = async () => {
     try {
-      const url = `${import.meta.env.VITE_API_URL}/getorders`;
+      const url = `https://prithvi-yadavb.vercel.app/getorders`;
       const response = await fetch(url, {
         method: 'GET',
         headers: {

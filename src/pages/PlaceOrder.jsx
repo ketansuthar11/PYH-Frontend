@@ -46,7 +46,7 @@ function PlaceOrder() {
 
     const getAddress = async ()=>{
         try{
-            const url = `${import.meta.env.VITE_API_URL}/getaddress`;
+            const url = `https://prithvi-yadavb.vercel.app/getaddress`;
             const response = await fetch(url,{
                 method: 'GET',
                 headers:{
@@ -73,7 +73,7 @@ function PlaceOrder() {
 
     const getCartData = async () => {
         try {
-            const url = `${import.meta.env.VITE_API_URL}/cart`;
+            const url = `https://prithvi-yadavb.vercel.app/cart`;
             const response = await fetch(url, {
                 method: 'GET',
                 headers: {
@@ -113,7 +113,7 @@ function PlaceOrder() {
                 paymentMethod: selectedPayment.method,
             };
 
-            const url = "http://localhost:8080/placeorder";
+            const url = "https://prithvi-yadavb.vercel.app/placeorder";
             const response = await fetch(url, {
                 method: 'POST',
                 headers: {
@@ -144,7 +144,7 @@ function PlaceOrder() {
         }
 
         try{
-            const url = 'http://localhost:8080/addaddress';
+            const url = 'https://prithvi-yadavb.vercel.app/addaddress';
             const response  = await fetch(url,{
                 method:'POST',
                 headers:{

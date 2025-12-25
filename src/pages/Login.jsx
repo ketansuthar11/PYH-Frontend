@@ -19,7 +19,7 @@ function Login() {
     let handleSubmit = async(e)=>{
         e.preventDefault();
         try{
-            const url = `${import.meta.env.VITE_API_URL}/auth/login`;
+            const url = `https://prithvi-yadavb.vercel.app/auth/login`;
             const response = await fetch(url,{
                 method:'POST',
                 headers:{

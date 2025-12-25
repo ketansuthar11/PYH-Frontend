@@ -24,7 +24,7 @@ function Signup() {
         e.preventDefault();
         console.log(signupInfo);
         try{
-            const url = `${import.meta.env.VITE_API_URL}/auth/signup`;
+            const url = `https://prithvi-yadavb.vercel.app/auth/signup`;
             const response = await fetch(url,{
                 method:'POST',
                 headers:{

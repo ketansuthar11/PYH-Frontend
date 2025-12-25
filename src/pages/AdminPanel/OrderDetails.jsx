@@ -25,7 +25,7 @@ import {ToastContainer} from 'react-toastify'
 
     const updateOrderStatus = async (statusValue) => {
         try {
-            const url = `${import.meta.env.VITE_API_URL}/admin/updateorderstatus/${id}`;
+            const url = `https://prithvi-yadavb.vercel.app/admin/updateorderstatus/${id}`;
             const response = await fetch(url, {
                 method: "PUT",
                 headers: {
@@ -49,7 +49,7 @@ import {ToastContainer} from 'react-toastify'
     
     const fetchOrder = async () => {
         try {
-            const url = `${import.meta.env.VITE_API_URL}/orders/${id}`;
+            const url = `https://prithvi-yadavb.vercel.app/orders/${id}`;
             const response = await fetch(url, {
                 method: "GET",
                 headers: {

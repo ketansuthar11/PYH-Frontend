@@ -10,7 +10,7 @@ function PlantDetails(props) {
 
     const fetchPlant = async () => {
         try {
-            const url = `http://localhost:5000/plants/${id}`;
+            const url = `https://prithvi-yadavb.vercel.app/${id}`;
             const headers = {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`,
                 'Content-Type': 'application/json'
@@ -38,7 +38,7 @@ function PlantDetails(props) {
 
     const addToCart = async() => {
     try {
-        const url = `${import.meta.env.VITE_API_URL}/cart`;
+        const url = `https://prithvi-yadavb.vercel.app/cart`;
         const response = await fetch(url, {
             method: 'POST',
             headers: {

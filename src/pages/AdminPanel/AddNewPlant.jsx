@@ -90,8 +90,8 @@ function AddAndUpdate() {
 
         try {
             let url = id
-                ? `${import.meta.env.VITE_API_URL}/admin/updatestock/${id}`
-                : `${import.meta.env.VITE_API_URL}/admin/addstock`;
+                ? `https://prithvi-yadavb.vercel.app/admin/updatestock/${id}`
+                : `https://prithvi-yadavb.vercel.app/admin/addstock`;
 
             let method = id ? "PUT" : "POST";
 
