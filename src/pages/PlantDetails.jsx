@@ -10,7 +10,7 @@ function PlantDetails(props) {
 
     const fetchPlant = async () => {
         try {
-            const url = `https://prithvi-yadavb.vercel.app/${id}`;
+            const url = `https://prithvi-yadavb.vercel.app/plants/${id}`;
             const headers = {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`,
                 'Content-Type': 'application/json'
