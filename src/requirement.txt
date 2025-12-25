@@ -1,0 +1,14 @@
+Home Page → About the nursery, images, mission, etc.
+
+Products/Plants Page → Catalog of plants with price, description, image.
+
+Cart & Checkout → Add to cart, place order, payment integration.
+
+Admin Dashboard → Add/remove/update plant listings, manage orders.
+
+Authentication → Users can log in/register (JWT-based auth).
+
+
+//today 2/09/2025//
+booking work
+
