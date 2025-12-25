@@ -69,7 +69,7 @@ function PlantDetails(props) {
         <div>
             <div className='plant-details'>
                 <div className='plant-img'>
-                    <img src={plant.image} alt="Rose" />
+                    <img src={plant.image} alt="Plant image" />
                 </div>
                 <div className='plant-info'>
                     <p className='category'>{plant.category}</p>
@@ -84,7 +84,7 @@ function PlantDetails(props) {
                         <button onClick={props.handleQuantity} name='minus'>-</button>
                     </div>
                     <div className='btn-actions'>
-                        <button>Buy Now</button>
+                        {/* <button>Buy Now</button> */}
                         <button onClick={addToCart} >Add to Cart</button>
                     </div>
                 </div>

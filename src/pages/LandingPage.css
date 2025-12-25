@@ -67,3 +67,42 @@
     color: #E8FFD7;
     background-color: #3E5F44;
 }
+
+@media (max-width: 768px) {
+
+  .home-content {
+    flex-direction: column;
+    padding: 30px 20px;   /* spacing adjust only */
+  }
+
+  .plant-image img {
+    width: 100%;
+    max-width: 320px;     /* image overflow se bacha */
+  }
+
+  .home-title-desc h1 {
+    font-size: 24px;      /* text readable on phone */
+    text-align: center;
+  }
+
+  .home-title-desc p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .home-title-desc button {
+    margin: 20px auto 0 auto; /* center button */
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .home-title-desc h1 {
+    font-size: 20px;
+  }
+
+  .home-title-desc p {
+    font-size: 13px;
+  }
+}

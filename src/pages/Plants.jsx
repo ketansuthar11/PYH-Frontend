@@ -5,7 +5,6 @@ import { handleError } from '../util';
 import { useNavigate } from 'react-router-dom';
 import PlantDetails from './PlantDetails';
 function Plants() {
-
     const navigator = useNavigate();
     const [plants, setPlants] = useState([]);
     const [search, setSearch] = useState('');
