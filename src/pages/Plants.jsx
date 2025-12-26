@@ -8,6 +8,7 @@ function Plants() {
     const navigator = useNavigate();
     const [plants, setPlants] = useState([]);
     const [search, setSearch] = useState('');
+    const [loading, setLoading] = useState(true);
 
     const handleOnChange = (event) => {
         setSearch(event.target.value);
@@ -15,6 +16,7 @@ function Plants() {
 
     const fetchPlants = async () => {
         try {
+            setLoading(true);
             const token = localStorage.getItem('token');
             console.log(import.meta.env.VITE_API_URL);
 
@@ -42,6 +44,9 @@ function Plants() {
         catch (err) {
             console.error(err);
             handleError("Something went wrong");
+        }
+        finally {
+            setLoading(false);
         }
     };
 
@@ -71,7 +76,11 @@ function Plants() {
             <div className='plants'>
                 <div className='search-bar'><input type="text" placeholder='Search plants...' onChange={handleOnChange} /></div>
                 <div className='plant-list'>
-                    {plants.filter(plant => plant.name.toLowerCase().includes(search.toLowerCase())).length > 0 ?
+                    {loading?
+                    <div className="loading">
+                        <p>Loading plants...</p>
+                    </div>:
+                    plants.filter(plant => plant.name.toLowerCase().includes(search.toLowerCase())).length > 0 ?
                         plants.filter(plant => plant.name.toLowerCase().includes(search.toLowerCase())).
                             map((plant) => (
                                 <div className='plant' key={plant._id} onClick={() => {handleOnClick(plant._id) }}><PlantCard img={plant.image} name={plant.name} price={plant.price} stock={plant.stock} /></div>

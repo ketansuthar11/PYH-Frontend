@@ -260,12 +260,40 @@ html, body {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: center; 
+  justify-content: center;
 }
 
 .plant{
   margin: 15px;
 }
+
+.loader-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    color: #4caf50;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.spinner {
+    width: 45px;
+    height: 45px;
+    border: 4px solid #e0e0e0;
+    border-top: 4px solid #4caf50;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 12px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
 /* Plant Details */
 .plant-details{
   width: 100%;
@@ -355,8 +383,8 @@ html, body {
 @media (max-width: 768px) {
 
   .plant-details {
-    flex-direction: column;     /* ⭐ stack */
-    height: auto;               /* ⭐ overflow fix */
+    flex-direction: column;
+    height: auto;
     padding: 30px 20px;
     gap: 40px;
   }
