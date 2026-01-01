@@ -1128,3 +1128,50 @@ h1, h2 {
   background-color: darkgreen;
 }
 
+.loading, .no-plant-found{
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 25px 0;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #2e7d32; /* green theme */
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #1b5e20;
+}
+
+.pagination button:disabled {
+  background-color: #c8e6c9;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.pagination span {
+  padding: 6px 12px;
+  background-color: #e8f5e9;
+  border-radius: 20px;
+}
+

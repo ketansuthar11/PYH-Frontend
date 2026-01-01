@@ -9,6 +9,24 @@ function Plants() {
     const [plants, setPlants] = useState([]);
     const [search, setSearch] = useState('');
     const [loading, setLoading] = useState(true);
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 10;
+
+
+    const filteredPlants = plants.filter(plant =>
+        plant.name.toLowerCase().includes(search.toLowerCase())
+    );
+
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentPlants = filteredPlants.slice(indexOfFirstItem, indexOfLastItem);
+
+    const totalPages = Math.ceil(filteredPlants.length / itemsPerPage);
+
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [search]);
+
 
     const handleOnChange = (event) => {
         setSearch(event.target.value);
@@ -76,16 +94,53 @@ function Plants() {
             <div className='plants'>
                 <div className='search-bar'><input type="text" placeholder='Search plants...' onChange={handleOnChange} /></div>
                 <div className='plant-list'>
-                    {loading?
-                    <div className="loading">
-                        <p>Loading plants...</p>
-                    </div>:
-                    plants.filter(plant => plant.name.toLowerCase().includes(search.toLowerCase())).length > 0 ?
-                        plants.filter(plant => plant.name.toLowerCase().includes(search.toLowerCase())).
-                            map((plant) => (
-                                <div className='plant' key={plant._id} onClick={() => {handleOnClick(plant._id) }}><PlantCard img={plant.image} name={plant.name} price={plant.price} stock={plant.stock} /></div>
-                            )) : <div className='no-plant-found'><p>No plants found</p></div>}
+                    {loading ?
+                        (<div className="loading">
+                            <p>Loading plants...</p>
+                        </div>) :
+                        currentPlants.length > 0 ? (
+                            currentPlants.map((plant) => (
+                                <div
+                                    className='plant'
+                                    key={plant._id}
+                                    onClick={() => handleOnClick(plant._id)}
+                                >
+                                    <PlantCard
+                                        img={plant.image}
+                                        name={plant.name}
+                                        price={plant.price}
+                                        stock={plant.stock}
+                                    />
+                                </div>
+                            ))
+                        ) : (
+                            <div className='no-plant-found'>
+                                <p>No plants found</p>
+                            </div>
+                        )}
                 </div>
+
+                {/* Pagination */}
+                {!loading && totalPages > 1 && (
+                    <div className="pagination">
+                        <button
+                            disabled={currentPage === 1}
+                            onClick={() => setCurrentPage(prev => prev - 1)}
+                        >
+                            Prev
+                        </button>
+
+                        <span>{currentPage} / {totalPages}</span>
+
+                        <button
+                            disabled={currentPage === totalPages}
+                            onClick={() => setCurrentPage(prev => prev + 1)}
+                        >
+                            Next
+                        </button>
+                    </div>
+                )}
+
             </div>
         </>
     )
