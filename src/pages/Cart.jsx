@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { handleError, handleSuccess } from '../util';
 import { ImCancelCircle } from "react-icons/im";
-import Navbar from '../components/Navbar';
 import { useNavigate } from 'react-router-dom';
 
-function Cart(props) {
+function Cart() {
   const [cartData, setCartData] = useState([]);
   const [localQty, setLocalQty] = useState({});
 
@@ -115,7 +114,6 @@ function Cart(props) {
 
   return (
     <>
-      <Navbar />
       <div className='cart'>
         {cartData.length > 0 ? (
           <>

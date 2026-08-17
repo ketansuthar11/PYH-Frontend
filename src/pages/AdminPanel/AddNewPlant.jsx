@@ -111,7 +111,7 @@ function AddAndUpdate() {
             } else {
                 handleError(result.message);
             }
-        } catch (err) {
+        } catch {
             handleError("Something went wrong");
         }
     };

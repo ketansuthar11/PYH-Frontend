@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 
 function AboutUs() {
     return (
-        <>=
+        <>
             <div className="about-us-container">
                 <header className="about-us-header">
                     <h1>About Us</h1>

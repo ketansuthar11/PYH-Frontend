@@ -156,7 +156,7 @@ function PlaceOrder() {
             const res = await response.json();
             console.log(res.message)
         }
-        catch(err){
+        catch{
             handleError("Failed to save address");
             return;
         }

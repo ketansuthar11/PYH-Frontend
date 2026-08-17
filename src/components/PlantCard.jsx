@@ -2,13 +2,12 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 export default function PlantCard(props) {
     const role = localStorage.getItem('role');
     return (
-        <Card className='plant-card' sx={{ width: 270 }}>
+        <Card className='plant-card'>
             <CardMedia
                 sx={{ height: 200 }}
                 image={props.img}
@@ -32,9 +31,7 @@ export default function PlantCard(props) {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small" style={{width:'100%',backgroundColor:'#3E5F44', color:'#E8FFD7', padding:8,fontFamily:`'Bubblegum Sans', cursive`}}>
-                    {role==="admin"? "Add Stock":"Buy Now"}
-                </Button>
+                <button className="plant-card-button">{role === "admin" ? "Manage stock" : "View plant"}</button>
             </CardActions>
         </Card>
     );
